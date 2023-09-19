@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+.footer-container {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: flex-start;
+  color: white;
+  background-color: rgb(61, 61, 61);
+  margin-top: 100px;
+}
+.company-name{
+        font-size: 20px;
+        margin-bottom: 20px;
+}
+.company-description{
+        font-size: 14px;
+        line-height: 1.2;
+}
+.link-header{
+        font-size: 20px;
+}
+.link-item{
+        list-style: none;
+        cursor: pointer;
+        padding-left: 0;
+}
