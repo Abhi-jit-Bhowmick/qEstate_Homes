@@ -3,6 +3,11 @@ import { AiFillDelete } from 'react-icons/ai';
 import { BiSolidEdit } from 'react-icons/bi';
 import EditModal from '../EditModal/EditModal';
 import "./ListingsTableView.css"
+import { useNavigate } from "react-router-dom";
+import { TbListDetails } from 'react-icons/tb';
+
+
+
 
 
 function ListingsTableView({
@@ -21,6 +26,8 @@ function ListingsTableView({
   const [selectedRows, setSelectedRows] = useState([]);
   const [editingItem, setEditingItem] = useState(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+
+  const nevigate = useNavigate()
 
   let itemPerPage = 10;
   let displayData = applyFiltres(filteredData, locationFilter, priceRangeFilter, sortBy)
@@ -213,7 +220,7 @@ function ListingsTableView({
         <tbody>
           {
             displayData.slice(startIndex, endIndex).map((items, index) => (
-              <tr className='table-row'>
+              <tr className='table-row' >
                 <td>
                   <input
                     type='checkbox'
@@ -226,8 +233,9 @@ function ListingsTableView({
                 <td>{items.address}</td>
                 <td>{items.listing_date}</td>
                 <td className='action-items'>
-                  <AiFillDelete className="action-items-icon" onClick={()=>handleDelete(items.property_id)}/>
-                  <BiSolidEdit className="action-items-icon" onClick={()=>handleEdit(items)}/>
+                  <AiFillDelete  onClick={()=>handleDelete(items.property_id)}/>
+                  <BiSolidEdit  onClick={()=>handleEdit(items)}/>
+                  <TbListDetails  onClick={()=>nevigate(`/detail/${items.property_id}`)}/>
                 </td>
               </tr>
             ))

@@ -3,6 +3,7 @@ import Header from '../Header/Header'
 import axios from 'axios'
 import { config } from '../../Config/Config'
 import { useParams } from 'react-router-dom'
+import "./ListingDetailPage.css"
 
 function ListingDetailPage() {
 
@@ -24,6 +25,7 @@ function ListingDetailPage() {
 
     useEffect(() => {
         fetchListings()
+        // eslint-disable-next-line
     }, [])
 
     return (
@@ -46,8 +48,10 @@ function ListingDetailPage() {
                                     <h2 className='agent-details-header'>Contact</h2>
                                     <div className='agent-details-content'>
                                         <span>John Smith</span>
-                                        <span className='title'>Email:</span>
-                                        <span>johnsmith@gmail.com</span>
+                                        <div className='title'>
+                                            <span>Email:</span>
+                                            <span>johnsmith@gmail.com</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
